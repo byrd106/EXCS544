@@ -56,13 +56,13 @@ def listen():
                         import threading
                         
                         if "YOU ARE A wolf" in data[2]: 
-                            timer = threading.Timer(4.0, sayWolf)
+                            timer = threading.Timer(20.0, sayWolf)
                             timer.start()
                         if "YOU ARE A witch" in data[2]: 
-                            timer = threading.Timer(4.0, sayWitch)
+                            timer = threading.Timer(20.0, sayWitch)
                             timer.start()
                         if "YOU ARE A wolf" in data[2]: 
-                            timer = threading.Timer(4.0, sayPerson)
+                            timer = threading.Timer(20.0, sayPerson)
                             timer.start()
 
                         
