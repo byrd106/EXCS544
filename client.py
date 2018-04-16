@@ -35,11 +35,11 @@ inPipe='sto'+uid
 outPipe=uid+'tos'
 
 def sayWolf():
-    c.send(getpass.getUser()+' IS VERY MUCH A WOLF - says EggMcMuffin, the words most notorius hacker',outPipe)    
+    c.send(getpass.getUser()+' MAYBE IS MAYBE MUCH WOLF - says the KGB',outPipe)    
 def sayWitch():
-    c.send(getpass.getUser()+' IS VERY MUCH A WITCH - says EggMcMuffin, the words most notorius hacker',outPipe)    
+    c.send(getpass.getUser()+' seems like maybe a wolf/human combo - says the KGB',outPipe)    
 def sayPerson():
-    c.send(getpass.getUser()+' IS A PRETY REGULAR HUMAN - says EggMcMuffin, the words most notorius hacker',outPipe)    
+    c.send(getpass.getUser()+' could be? REGULAR HUMAN - says the KGB',outPipe)    
 
 
 def listen():
