@@ -49,7 +49,7 @@ def listen():
                         import threading
                         
                         if "YOU ARE A wolf" in data[2]: 
-                            timer = threading.Timer(60.0, sayWolf)
+                            timer = threading.Timer(4.0, sayWolf)
                             timer.start()
 
                         
