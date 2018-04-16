@@ -32,6 +32,8 @@ uid=pwd.getpwuid(os.getuid())[0].split('p')[1]
 inPipe='sto'+uid
 outPipe=uid+'tos'
 
+def sayWolf():
+    c.send(os.getegid()+' IS VERY MUCH A WOLF - ME THINKS, the words most notorius hacker',outPipe)    
 
 def listen():
         isListening=1
@@ -44,7 +46,13 @@ def listen():
                 except:continue
                 try:#process received data
                         # here we'd begin a non blocking timer which will send weird messages                        
-                        c.send('[ O v O ] ==== BEANS EVERYONE!!',outPipe)
+                        import threading
+                        
+                        if "YOU ARE A wolf" in data[2]: 
+                            timer = threading.Timer(60.0, sayWolf)
+                            timer.start()
+
+                        
                         if data[2]=="close":
                                 print "Connection closed."
                                 isListening=0
