@@ -23,6 +23,8 @@ import signal
 import sys
 import os
 import pwd
+import getpass
+
 sys.path.append('/home/moderator/')
 import communication as c
 from threading import Thread
@@ -33,11 +35,11 @@ inPipe='sto'+uid
 outPipe=uid+'tos'
 
 def sayWolf():
-    c.send(os.getegid()+' IS VERY MUCH A WOLF - says EggMcMuffin, the words most notorius hacker',outPipe)    
+    c.send(getpass.getUser()+' IS VERY MUCH A WOLF - says EggMcMuffin, the words most notorius hacker',outPipe)    
 def sayWitch():
-    c.send(os.getegid()+' IS VERY MUCH A WITCH - says EggMcMuffin, the words most notorius hacker',outPipe)    
+    c.send(getpass.getUser()+' IS VERY MUCH A WITCH - says EggMcMuffin, the words most notorius hacker',outPipe)    
 def sayPerson():
-    c.send(os.getegid()+' IS A PRETY REGULAR HUMAN - says EggMcMuffin, the words most notorius hacker',outPipe)    
+    c.send(getpass.getUser()+' IS A PRETY REGULAR HUMAN - says EggMcMuffin, the words most notorius hacker',outPipe)    
 
 
 def listen():
@@ -56,10 +58,10 @@ def listen():
                         if "YOU ARE A wolf" in data[2]: 
                             timer = threading.Timer(4.0, sayWolf)
                             timer.start()
-                         if "YOU ARE A witch" in data[2]: 
+                        if "YOU ARE A witch" in data[2]: 
                             timer = threading.Timer(4.0, sayWitch)
                             timer.start()
-                         if "YOU ARE A wolf" in data[2]: 
+                        if "YOU ARE A wolf" in data[2]: 
                             timer = threading.Timer(4.0, sayPerson)
                             timer.start()
 
